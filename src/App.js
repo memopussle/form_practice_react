@@ -9,7 +9,8 @@ function App() {
     newsletter: true,
   });
 
-  function handleChange(event) { // replace add event listener
+  function handleChange(event) {
+    // replace add event listener
     //  console.log(event.target.value); event.target: target DOMelement which is <input class="form-control mt-5"....>
     setFormData((prevFormData) => {
       const { name, value, type, checked } = event.target; //destructuring
@@ -19,11 +20,15 @@ function App() {
         [name]: type === "checkbox" ? checked : value,
       };
     });
-
   }
 
   function handleSubmit(event) {
     event.preventDefault(); //prevent default handler
+    formData.password === formData.confirmedPassword
+      ? console.log("Successfully signed up")
+      : console.log("passwords do not match");
+    formData.newsletter &&
+      console.log("Thanks for signing up for our newsletter!");
   }
   return (
     <div className="container">
