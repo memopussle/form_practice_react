@@ -8,6 +8,7 @@ function App() {
     confirmedPassword: "",
     newsletter: true,
   });
+  console.log(formData);
 
   function handleChange(event) {
     // replace add event listener
